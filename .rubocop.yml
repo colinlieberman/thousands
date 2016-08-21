@@ -3,3 +3,6 @@ Style/StringLiterals:
 
 Metrics/LineLength:
   Max: 1400
+
+Style/Documentation:
+  Enforce: none

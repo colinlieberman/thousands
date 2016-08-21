@@ -1,0 +1,32 @@
+%h1
+  How big are really big things?
+%p
+  = raw "It&rsquo;s hard to wrap our heads around how big our own planet is. It&rsquo;s even harder to wrap our heads around how tiny our planet is in the enormous solar system it&rsquo;s in. And then how tiny our solar system is its galaxy. And how tiny our galaxy is in this enormous universe."
+%p
+  This
+  = link_to "tediously accurate scale model of the solar system", "http://joshworth.com/dev/pixelspace/pixelspace_solarsystem.html"
+  = raw "is a wonderful, fascinating visualization. And it had me thinking about other ways to try to wrap my head around the sizes of things. And I thought of thousands. We like to say that this thing is the size of a thousand of these other things. But what&rsquo;s a thousand?"
+  %p
+    = raw "Let&rsquo;s start small. Let&rsquo;s try to understand a thousnd by understanding a thousand of something we already understand with some other thing we understand."
+%p
+  Choose a small thing:
+  = select("select", "orig", Item.less_than_100mm.collect { |i| [i.name, i.id] }, { include_blank: true })
+
+%div#tenx.hidden
+  %p
+    Here are some things roughly ten times the size of
+    %span.orig
+    = ":"
+    = select("select", "tenx", {} )
+
+%div#hunx.hidden
+  %p
+    %span.orig
+    is
+    %span.orig-mult
+    times the size of
+    %span.tenx
+
+  %p
+    Here are some things rougly ten times the size of that:
+    = select("select", "hunx", {})

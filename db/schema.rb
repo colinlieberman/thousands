@@ -27,10 +27,11 @@ ActiveRecord::Schema.define(version: 20160821154608) do
   end
 
   create_table "items", force: :cascade do |t|
-    t.integer  "length_mm",  limit: 8, null: false
-    t.text     "name",                 null: false
-    t.datetime "created_at",           null: false
-    t.datetime "updated_at",           null: false
+    t.integer  "length_mm",  limit: 16, null: false
+    t.text     "name",                  null: false
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+    t.index ["length_mm"], name: "index_items_on_length_mm"
     t.index ["name"], name: "index_items_on_name"
   end
 
